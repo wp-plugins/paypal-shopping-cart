@@ -22,6 +22,8 @@ Insert the button in your pages or posts with this shortcode
 
 `[paypal_shopping_cart item_name="YOUR ITEM NAME" amount="AMOUNT"]`
 
+`[paypal_view_cart]`
+
 == Installation ==
 
 = Automatic installation =

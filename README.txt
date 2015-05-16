@@ -51,6 +51,7 @@ Easy steps to install the plugin:
 3. MailChimp functionality
 4. Help page.
 5. Orders list.
+6. Checkout page
 
 
 

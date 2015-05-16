@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>PayPal Payment Buttons</title>
+        <link rel="stylesheet" href="button_files/bootstrap.css">
+        <link rel="stylesheet" href="button_files/app.css">
+    </head>
+    <body>
+        <div id="page">
+            <h3 id="custom">Customize your button</h3>
+            <ol>
+                <li>Click <strong>Customize &amp; Preview</strong> to get a lightbox where you can customize your button code with your merchant ID, product name, price and other options.</li>
+                <li>Click <strong>Preview</strong> in the lightbox to see a preview of your newly created button.</li>
+                <li>Click on the button to test it out.</li>
+            </ol>
+            <ul class="nav nav-tabs">
+                <li class="active"><a href="#buynow" data-toggle="tab">Buy Now</a></li>
+                <li><a href="#cart" data-toggle="tab">Add to Cart</a></li>
+                <li><a href="#donate" data-toggle="tab">Donate</a></li>
+                <li><a href="#subscribe" data-toggle="tab">Subscribe</a></li>
+                <li><a href="#qr" data-toggle="tab">QR Codes</a></li>
+            </ul>
+            <div class="tab-content">
+                <div id="buynow" class="tab-pane example active">
+                    <p>Buy Now buttons are perfect for single item purchases <a href="#buyNowModal" class="edit" role="button" data-toggle="modal" data-keyboard="true"><span class="icon icon-edit"></span> Customize &amp; Preview</a></p>
+                    <pre><code>&lt;script src="paypal-button.min.js?merchant=YOUR_MERCHANT_ID"
+                        data-button="buynow"
+                        data-name="My product"
+                        data-amount="1.00"
+                        async
+                    &gt;&lt;/script&gt;</code>
+                    </pre>
+                    <div id="buyNowModal" class="editable modal hide fade" role="dialog" aria-hidden="true">
+                        <form action="#" class="modal-body form-horizontal">
+                            <input name="button" value="buynow" type="hidden">
+                            <div class="control-group">
+                                <label class="control-label" for="buyNowMerchant">Merchant</label>
+                                <div class="controls">
+                                    <input id="buyNowMerchant" name="business" required="required" autocomplete="off" type="text">
+                                    <span class="help-inline">Required</span>
+                                    <span class="help-inline">Email address or merchant ID</span>
+                                </div>
+                            </div>
+                            <div class="control-group">
+                                <label class="control-label" for="buyNowName">Name</label>
+                                <div class="controls">
+                                    <input id="buyNowName" name="name" placeholder="My product" autocomplete="off" type="text">
+                                </div>
+                            </div>
+                            <div class="control-group">
+                                <label class="control-label" for="buyNowQuantity">Quantity</label>
+                                <div class="controls">
+                                    <input id="buyNowQuantity" name="quantity" placeholder="1" autocomplete="off" type="text">
+                                </div>
+                            </div>
+                            <div class="control-group">
+                                <label class="control-label" for="buyNowAmount">Amount</label>
+                                <div class="controls">
+                                    <input id="buyNowAmount" name="amount" placeholder="5.00" autocomplete="off" type="text">
+                                </div>
+                            </div>
+                            <div class="control-group">
+                                <label class="control-label" for="buyNowCurrency">Currency</label>
+                                <div class="controls">
+                                    <input id="buyNowCurrency" name="currency" placeholder="USD" autocomplete="off" maxlength="3" type="text">
+                                </div>
+                            </div>
+                            <div class="control-group">
+                                <label class="control-label" for="buyNowShipping">Shipping</label>
+                                <div class="controls">
+                                    <input id="buyNowShipping" name="shipping" placeholder="0.75" autocomplete="off" type="text">
+                                </div>
+                            </div>
+                            <div class="control-group">
+                                <label class="control-label" for="buyNowTax">Tax</label>
+                                <div class="controls">
+                                    <input id="buyNowTax" name="tax" placeholder="3.50" autocomplete="off" type="text">
+                                </div>
+                            </div>
+                            <div class="control-group">
+                                <label class="control-label" for="buyNowCallback">Callback URL</label>
+                                <div class="controls">
+                                    <input id="buyNowCallback" name="callback" placeholder="http://mysite.com/callback" autocomplete="off" type="text">
+                                </div>
+                            </div>
+                            <div class="control-group">
+                                <label class="control-label" for="buyNowEnvironment">Environment</label>
+                                <div class="controls">
+                                    <label class="checkbox">
+                                        <input id="buyNowEnvironment" name="env" value="sandbox" type="checkbox">
+                                        Sandbox
+                                    </label>
+                                </div>
+                            </div>
+                        </form>
+                        <div class="modal-footer">
+                            <button class="btn" data-dismiss="modal">Close</button>
+                            <button class="btn btn-primary" data-modal-save="true">Preview</button>
+                        </div>
+                    </div>
+                    <div class="tryit">
+                        <script src="button_files/ga.js" async="" type="text/javascript"></script><script src="button_files/paypal-button.js" data-button="buynow" data-name="My product!" data-amount="1.00" async=""></script>
+                    </div>
+                </div>
+                <div id="cart" class="tab-pane example">
+                    <p>Add To Cart buttons let users add multiple items instantly giving your website a cart <a href="#cartModal" class="edit" role="button" data-toggle="modal" data-keyboard="true"><span class="icon icon-edit"></span> Customize &amp; Preview</a></p>
+                    <pre><code>&lt;script src="paypal-button.min.js?merchant=YOUR_MERCHANT_ID"
+                        data-button="cart"
+                        data-name="Product in your cart"
+                        data-amount="1.00"
+                        async
+                    &gt;&lt;/script&gt;</code>
+                    </pre>
+                    <div id="cartModal" class="editable modal hide fade" role="dialog" aria-hidden="true">
+                        <form action="#" class="modal-body form-horizontal">
+                            <input name="button" value="cart" type="hidden">
+                            <div class="control-group">
+                                <label class="control-label" for="cartMerchant">Merchant</label>
+                                <div class="controls">
+                                    <input id="cartMerchant" name="business" required="required" autocomplete="off" type="text">
+                                    <span class="help-inline">Required</span>
+                                    <span class="help-inline">Email address or merchant ID</span>
+                                </div>
+                            </div>
+                            <div class="control-group">
+                                <label class="control-label" for="cartName">Name</label>
+                                <div class="controls">
+                                    <input id="cartName" name="name" required="required" placeholder="Product in your cart" autocomplete="off" type="text">
+                                    <span class="help-inline">Required</span>
+                                </div>
+                            </div>
+                            <div class="control-group">
+                                <label class="control-label" for="cartQuantity">Quantity</label>
+                                <div class="controls">
+                                    <input id="cartQuantity" name="quantity" placeholder="1" autocomplete="off" type="text">
+                                </div>
+                            </div>
+                            <div class="control-group">
+                                <label class="control-label" for="cartAmount">Amount</label>
+                                <div class="controls">
+                                    <input id="cartAmount" name="amount" required="required" placeholder="5.00" autocomplete="off" type="text">
+                                    <span class="help-inline">Required</span>
+                                </div>
+                            </div>
+                            <div class="control-group">
+                                <label class="control-label" for="cartCurrency">Currency</label>
+                                <div class="controls">
+                                    <input id="cartCurrency" name="currency" placeholder="USD" autocomplete="off" maxlength="3" type="text">
+                                </div>
+                            </div>
+                            <div class="control-group">
+                                <label class="control-label" for="cartShipping">Shipping</label>
+                                <div class="controls">
+                                    <input id="cartShipping" name="shipping" placeholder="0.75" autocomplete="off" type="text">
+                                </div>
+                            </div>
+                            <div class="control-group">
+                                <label class="control-label" for="cartTax">Tax</label>
+                                <div class="controls">
+                                    <input id="cartTax" name="tax" placeholder="3.50" autocomplete="off" type="text">
+                                </div>
+                            </div>
+                            <div class="control-group">
+                                <label class="control-label" for="cartCallback">Callback URL</label>
+                                <div class="controls">
+                                    <input id="cartCallback" name="callback" autocomplete="off" placeholder="http://mysite.com/callback" type="text">
+                                </div>
+                            </div>
+                            <div class="control-group">
+                                <label class="control-label" for="cartEnvironment">Environment</label>
+                                <div class="controls">
+                                    <label class="checkbox">
+                                        <input id="cartEnvironment" name="env" value="sandbox" type="checkbox">
+                                        Sandbox
+                                    </label>
+                                </div>
+                            </div>
+                        </form>
+                        <div class="modal-footer">
+                            <button class="btn" data-dismiss="modal">Close</button>
+                            <button class="btn btn-primary" data-modal-save="true">Preview</button>
+                        </div>
+                    </div>
+
+                    <div class="tryit">
+                        <script src="button_files/paypal-button.js" data-button="cart" data-name="Product in your cart" data-amount="1.00" async=""></script>
+                    </div>
+                </div>
+                <div id="donate" class="tab-pane example">
+                    <p>Donate buttons are great for accepting donations from users <a href="#donateModal" class="edit" role="button" data-toggle="modal" data-keyboard="true"><span class="icon icon-edit"></span> Customize &amp; Preview</a></p>
+                    <pre><code>&lt;script src="paypal-button.min.js?merchant=YOUR_MERCHANT_ID"
+                        data-button="donate"
+                        data-name="My product"
+                        data-amount="1.00"
+                        async
+                    &gt;&lt;/script&gt;</code>
+                    </pre>
+                    <div id="donateModal" class="editable modal hide fade" role="dialog" aria-hidden="true">
+                        <form action="#" class="modal-body form-horizontal">
+                            <input name="button" value="donate" type="hidden">
+                            <div class="control-group">
+                                <label class="control-label" for="buyNowMerchant">Merchant</label>
+                                <div class="controls">
+                                    <input id="buyNowMerchant" name="business" required="required" autocomplete="off" type="text">
+                                    <span class="help-inline">Required</span>
+                                    <span class="help-inline">Email address or merchant ID</span>
+                                </div>
+                            </div>
+                            <div class="control-group">
+                                <label class="control-label" for="buyNowName">Name</label>
+                                <div class="controls">
+                                    <input id="buyNowName" name="name" placeholder="My product" autocomplete="off" type="text">
+                                </div>
+                            </div>
+                            <div class="control-group">
+                                <label class="control-label" for="buyNowQuantity">Quantity</label>
+                                <div class="controls">
+                                    <input id="buyNowQuantity" name="quantity" placeholder="1" autocomplete="off" type="text">
+                                </div>
+                            </div>
+                            <div class="control-group">
+                                <label class="control-label" for="buyNowAmount">Amount</label>
+                                <div class="controls">
+                                    <input id="buyNowAmount" name="amount" placeholder="5.00" autocomplete="off" type="text">
+                                </div>
+                            </div>
+                            <div class="control-group">
+                                <label class="control-label" for="buyNowCurrency">Currency</label>
+                                <div class="controls">
+                                    <input id="buyNowCurrency" name="currency" placeholder="USD" autocomplete="off" maxlength="3" type="text">
+                                </div>
+                            </div>
+                            <div class="control-group">
+                                <label class="control-label" for="buyNowShipping">Shipping</label>
+                                <div class="controls">
+                                    <input id="buyNowShipping" name="shipping" placeholder="0.75" autocomplete="off" type="text">
+                                </div>
+                            </div>
+                            <div class="control-group">
+                                <label class="control-label" for="buyNowTax">Tax</label>
+                                <div class="controls">
+                                    <input id="buyNowTax" name="tax" placeholder="3.50" autocomplete="off" type="text">
+                                </div>
+                            </div>
+                            <div class="control-group">
+                                <label class="control-label" for="buyNowCallback">Callback URL</label>
+                                <div class="controls">
+                                    <input id="buyNowCallback" name="callback" placeholder="http://mysite.com/callback" autocomplete="off" type="text">
+                                </div>
+                            </div>
+                            <div class="control-group">
+                                <label class="control-label" for="buyNowEnvironment">Environment</label>
+                                <div class="controls">
+                                    <label class="checkbox">
+                                        <input id="buyNowEnvironment" name="env" value="sandbox" type="checkbox">
+                                        Sandbox
+                                    </label>
+                                </div>
+                            </div>
+                        </form>
+                        <div class="modal-footer">
+                            <button class="btn" data-dismiss="modal">Close</button>
+                            <button class="btn btn-primary" data-modal-save="true">Preview</button>
+                        </div>
+                    </div>
+                    <div class="tryit">
+                        <script src="button_files/paypal-button.js" data-button="donate" data-name="My product!" data-amount="1.00" async=""></script>
+                    </div>
+                </div>
+                <div id="subscribe" class="tab-pane example">
+                    <p>Subscribe buttons can be used to set up payment subscriptions with your users <a href="#subscribeModal" class="edit" role="button" data-toggle="modal" data-keyboard="true"><span class="icon icon-edit"></span> Customize &amp; Preview</a></p>
+                    <pre><code>&lt;script src="paypal-button.min.js?merchant=YOUR_MERCHANT_ID"
+                        data-button="subscribe"
+                        data-name="My product"
+                        data-amount="1.00"
+                        data-recurrence="1"
+                        data-period="M"
+                        async
+                    &gt;&lt;/script&gt;</code>
+                    </pre>
+                    <div id="subscribeModal" class="editable modal hide fade" role="dialog" aria-hidden="true">
+                        <form action="#" class="modal-body form-horizontal">
+                            <input name="button" value="subscribe" type="hidden">
+                            <div class="control-group">
+                                <label class="control-label" for="buyNowMerchant">Merchant</label>
+                                <div class="controls">
+                                    <input id="buyNowMerchant" name="business" required="required" autocomplete="off" type="text">
+                                    <span class="help-inline">Required</span>
+                                    <span class="help-inline">Email address or merchant ID</span>
+                                </div>
+                            </div>
+                            <div class="control-group">
+                                <label class="control-label" for="buyNowName">Name</label>
+                                <div class="controls">
+                                    <input id="buyNowName" name="name" placeholder="My product" autocomplete="off" type="text">
+                                </div>
+                            </div>
+                            <div class="control-group">
+                                <label class="control-label" for="buyNowRecurringAmount">Amount</label>
+                                <div class="controls">
+                                    <input id="buyNowRecurringAmount" name="amount" placeholder="5.00" autocomplete="off" type="text">
+                                </div>
+                            </div>
+                            <div class="control-group">
+                                <label class="control-label" for="buyNowRecurringCurrency">Currency</label>
+                                <div class="controls">
+                                    <input id="buyNowRecurringCurrency" name="currency" placeholder="USD" autocomplete="off" maxlength="3" type="text">
+                                </div>
+                            </div>
+                            <div class="control-group">
+                                <label class="control-label" for="buyNowNumberOfPeriods">Recurrences</label>
+                                <div class="controls">
+                                    <input id="buyNowNumberOfPeriods" name="recurrence" placeholder="2" autocomplete="off" type="text">
+                                </div>
+                            </div>
+                            <div class="control-group">
+                                <label class="control-label" for="buyNowPeriodType">Type of Period</label>
+                                <div class="controls">
+                                    <select id="buyNowPeriodType" name="period">
+                                        <option selected="selected" value="D">Days</option>
+                                        <option value="W">Weeks</option>
+                                        <option value="M">Months</option>
+                                        <option value="Y">Years</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="control-group">
+                                <label class="control-label" for="buyNowCallback">Callback URL</label>
+                                <div class="controls">
+                                    <input id="buyNowCallback" name="callback" placeholder="http://mysite.com/callback" autocomplete="off" type="text">
+                                </div>
+                            </div>
+                            <div class="control-group">
+                                <label class="control-label" for="buyNowEnvironment">Environment</label>
+                                <div class="controls">
+                                    <label class="checkbox">
+                                        <input id="buyNowEnvironment" name="env" value="sandbox" type="checkbox">
+                                        Sandbox
+                                    </label>
+                                </div>
+                            </div>
+                        </form>
+                        <div class="modal-footer">
+                            <button class="btn" data-dismiss="modal">Close</button>
+                            <button class="btn btn-primary" data-modal-save="true">Preview</button>
+                        </div>
+                    </div>
+                    <div class="tryit">
+                        <script src="button_files/paypal-button.js" data-button="subscribe" data-name="My product!" data-a3="1.00" data-p3="1" data-t3="M" async=""></script>
+                    </div>
+                </div>
+                <div id="qr" class="tab-pane example">
+                    <p>QR codes are ideal for allowing quick mobile payments <a href="#qrModal" class="edit" role="button" data-toggle="modal" data-keyboard="true"><span class="icon icon-edit"></span> Customize &amp; Preview</a></p>
+                    <pre><code>&lt;script src="paypal-button.min.js?merchant=YOUR_MERCHANT_ID"
+                        data-button="qr"
+                        data-name="Product via QR code"
+                        data-amount="1.00"
+                        data-size="250"
+                        async
+                    &gt;&lt;/script&gt;</code>
+                    </pre>
+                    <div id="qrModal" class="editable modal hide fade" role="dialog" aria-hidden="true">
+                        <form action="#" class="modal-body form-horizontal">
+                            <input name="button" value="qr" type="hidden">
+                            <div class="control-group">
+                                <label class="control-label" for="qrMerchant">Merchant</label>
+                                <div class="controls">
+                                    <input id="qrMerchant" name="business" required="required" autocomplete="off" type="text">
+                                    <span class="help-inline">Required</span>
+                                    <span class="help-inline">Email address or merchant ID</span>
+                                </div>
+                            </div>
+                            <div class="control-group">
+                                <label class="control-label" for="qrName">Name</label>
+                                <div class="controls">
+                                    <input id="qrName" name="name" value="Product via QR code" autocomplete="off" type="text">
+                                </div>
+                            </div>
+                            <div class="control-group">
+                                <label class="control-label" for="qrQuantity">Quantity</label>
+                                <div class="controls">
+                                    <input id="qrQuantity" name="quantity" placeholder="1" autocomplete="off" type="text">
+                                </div>
+                            </div>
+                            <div class="control-group">
+                                <label class="control-label" for="qrAmount">Amount</label>
+                                <div class="controls">
+                                    <input id="qrAmount" name="amount" placeholder="5.00" autocomplete="off" type="text">
+                                </div>
+                            </div>
+                            <div class="control-group">
+                                <label class="control-label" for="qrCurrency">Currency</label>
+                                <div class="controls">
+                                    <input id="qrCurrency" name="currency" placeholder="USD" autocomplete="off" maxlength="3" type="text">
+                                </div>
+                            </div>
+                            <div class="control-group">
+                                <label class="control-label" for="qrShipping">Shipping</label>
+                                <div class="controls">
+                                    <input id="qrShipping" name="shipping" placeholder="0.75" autocomplete="off" type="text">
+                                </div>
+                            </div>
+                            <div class="control-group">
+                                <label class="control-label" for="qrTax">Tax</label>
+                                <div class="controls">
+                                    <input id="qrTax" name="tax" placeholder="3.50" autocomplete="off" type="text">
+                                </div>
+                            </div>
+                            <div class="control-group">
+                                <label class="control-label" for="qrCallback">Callback URL</label>
+                                <div class="controls">
+                                    <input id="qrCallback" name="callback" placeholder="http://mysite.com/callback" autocomplete="off" type="text">
+                                </div>
+                            </div>
+                            <div class="control-group">
+                                <label class="control-label" for="qrEnvironment">Environment</label>
+                                <div class="controls">
+                                    <label class="checkbox">
+                                        <input id="qrEnvironment" name="env" value="sandbox" type="checkbox">
+                                        Sandbox
+                                    </label>
+                                </div>
+                            </div>
+                        </form>
+                        <div class="modal-footer">
+                            <button class="btn" data-dismiss="modal">Close</button>
+                            <button class="btn btn-primary" data-modal-save="true">Preview</button>
+                        </div>
+                    </div>
+                    <div class="tryit">
+                        <script src="button_files/paypal-button.js" data-button="qr" data-name="Product via QR code" data-amount="1.00" data-size="250" async=""></script>
+                    </div>
+                </div>
+            </div>
+            <p><em>Important:</em> Unless you enable the sandbox environment, all payments made using this code will be live and not test payments.</p>
+        </div>
+        <script src="button_files/jquery.js"></script>
+        <script src="button_files/bootstrap.js"></script>
+        <script src="button_files/app.js"></script>
+</body>
+</html>

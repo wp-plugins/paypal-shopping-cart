@@ -46,14 +46,18 @@ Easy steps to install the plugin:
 
 == Screenshots ==
 
-1. Setting up plugin Order-level Rules settings.
-2. Setting up plugin Product settings.
+1. Setting up plugin page.
+2. Send Email.
+3. MailChimp functionality
+4. Help page.
+5. Orders list.
+
 
 
 == Changelog ==
 
 = 1.0.0 =
-*	Release Date - 28 Jan, 1015
+*	Release Date - 15 May , 2015
 *  	First Version
 
 

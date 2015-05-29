@@ -1,5 +1,6 @@
 === PayPal Shopping Cart ===
 Contributors: johnwickjigo
+Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=68A46XPQMRCJN
 Tags:  paypal-shopping-cart, admin, checkout, e-commerce, limits, maximum, price, pricing, purchase, shop, store, wp e-commerce, incremental product quantities, max, min, product maximum values, product minimum values, product quantities, product step values, woocommerce
 Requires at least: 3.0.1
 Tested up to: 4.2.2

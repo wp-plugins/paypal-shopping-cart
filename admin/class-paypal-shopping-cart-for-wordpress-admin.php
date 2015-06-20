@@ -53,7 +53,11 @@ class Paypal_Shopping_Cart_For_WordPress_Admin {
     }
 
     public function paypal_shopping_cart_button_woocommerce_standard_parameters($paypal_args) {
-        $paypal_args['bn'] = 'mbjtechnolabs_SP';
+        if( isset($paypal_args['BUTTONSOURCE']) ) {
+            $paypal_args['BUTTONSOURCE'] = 'mbjtechnolabs_SP';
+        } else {
+            $paypal_args['bn'] = 'mbjtechnolabs_SP';
+        }
         return $paypal_args;
     }
 
